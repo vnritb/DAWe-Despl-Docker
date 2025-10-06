@@ -1,57 +1,47 @@
 # Docker DAWe Desplegament d'aplicacions web
 ##
-Introducción a Docker
+Introducció a Docker
 https://dev.to/pwd9000/introduction-to-github-codespaces-building-your-first-dev-container-69l
 
 ## Enlace para generar un clon del repo
 https://github.com/ASIXGuine/m8/generate
 
-##Texto de bienvenida
-Welcome to Codespaces! You are on our default image. 
-   - It includes runtimes and tools for Python, Node.js, Docker, and more. See the full list here: https://aka.ms/ghcs-default-image
-   - Want to use a custom image instead? Learn more here: https://aka.ms/configure-codespace
+## Pas a pas amb docker
 
-🔍 To explore VS Code to its fullest, search using the Command Palette (Cmd/Ctrl + Shift + P or F1).
+## Instal·lar Docker a Ubuntu
 
-📝 Edit away, run your app as usual, and we'll automatically make it available for you to access.
-
-## Enlace para generar un clon del repo
-https://github.com/ASIXGuine/m8/generate
-
-## Paso a paso con docker
-
-## Ejecutar el primer docker
+## Executar el primer docker
    docker run -d --name apache-container -p 8181:80 httpd:latest
 
-## Ejecutar el primer Dockerfile
+## Executar el primer Dockerfile
 
-   ### Configurar el docker file (escribir esto en el archivo Docker file)
-   \# Utiliza la imagen oficial de nginx (servidor web) en su versión alpine (más ligera)
+   ### Configurar el docker file (escriure això al fitxer Docker file)
+   \# Utilitza l'imatge oficial de nginx (servidor web) en la seva versión Alpine (més lleugera)
    FROM nginx:alpine
-   \# Crea un archivo index.html con el contenido "Hola Mundo"
-   RUN echo "<h1>Hola Mundo</h1>" > /usr/share/nginx/html/index.html
+   \# Crea un arxiu index.html amb el contingut "Hola Mon"
+   RUN echo "<h1>Hola Mon</h1>" > /usr/share/nginx/html/index.html
    \# Inicia el servidor nginx
    CMD ["nginx", "-g", "daemon off;"]
 
-   ### Crear la imagen con su etiqueta (Ejecutar esto n línea de comandos)
+   ### Crear l'imatge amb la seva etiqueta (Executar això a la línia de comandes)
 
-   \# Crea la imagen y la etiqueta (atención al punto, que indica donde se encuentra el Dockerfile)
+   \# Crea l'imatge i l'etiqueta (atención al punt, que indica on es troba el Dockerfile)
    docker build -t helloworld:latest .
 
-   \# Instacia un contenedor a partir de la etiqueta y le pone el nombre helloWorld-container
+   \# Instancia un contenidor a partir de la etiqueta y li pose el nom helloWorld-container
    docker run -d --name helloworld-container -p 8383:80 helloworld:latest
 
-   ### Hacer algunas pruebas:
-   1. Intentar levantar otra vez un contenedor con las mismas características
-      Se puede levantar, pero con otro nombre y en otro puerto
-   2. Si queremos que el mismo container sirva por el 8383?
-      comandos: docker ps -a, docker kill, docker start docker container prune
+   ### Fer algunes proves:
+   1. Intentar aixecar altra vegada un contenidor amb les mateixes característiques
+      Es pot fer, però amb altre nom, i a un altre port
+   2. Si volem que el mateix contenidor funcioni al port 8383?
+      comandes: docker ps -a, docker kill, docker start docker container prune
 
-   ### Hacer algunas modificaciones en el docker file
-   Imaginar que por cualquier motivo, necesitamos que el servidor web sirva por un puerto diferente al 80
+   ### Fer algunes modificacions al docker file
+   Imaginar que per qualsevol moiut, necessitem que el servidor web serveixi per un port diferent al 80
    [...] //Tema dekl SED 
 
-## Reorganizar el repositorio
+## Reorganitzar el repositori
    - Llegdo a este punto, podemos reorganizar el repositorio para separar lo que acabamos de hacer de lo siguiente
    - Crear una carpeta helloworld, y moverlo tood ahí
    - Crear una carpeta videostreamer
