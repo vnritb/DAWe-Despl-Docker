@@ -13,20 +13,22 @@ https://dev.to/pwd9000/introduction-to-github-codespaces-building-your-first-dev
 ## Executar el primer Dockerfile
 
    ### Configurar el docker file (escriure això al fitxer Docker file)
-   \# Utilitza l'imatge oficial de nginx (servidor web) en la seva versió Alpine (més lleugera)
+   
+   ```
+   # Utilitza l'imatge oficial de nginx (servidor web) en la seva versió Alpine (més lleugera)
    FROM nginx:alpine
-   \# Crea un arxiu index.html amb el contingut "Hola Mon"
+   # Crea un arxiu index.html amb el contingut "Hola Mon"
    RUN echo "<h1>Hola Mon</h1>" > /usr/share/nginx/html/index.html
-   \# Inicia el servidor nginx
+   # Inicia el servidor nginx
    CMD ["nginx", "-g", "daemon off;"]
-
    ### Crear l'imatge amb la seva etiqueta (Executar això a la línia de comandes)
 
-   \# Crea l'imatge i l'etiqueta (atención al punt, que indica on es troba el Dockerfile)
+   # Crea l'imatge i l'etiqueta (atención al punt, que indica on es troba el Dockerfile)
    docker build -t helloworld:latest .
 
-   \# Instancia un contenidor a partir de la etiqueta y li pose el nom helloWorld-container
+   # Instancia un contenidor a partir de la etiqueta y li pose el nom helloWorld-container
    docker run -d --name helloworld-container -p 8383:80 helloworld:latest
+   ```
 
    ### Fer algunes proves:
    1. Intentar aixecar altra vegada un contenidor amb les mateixes característiques
