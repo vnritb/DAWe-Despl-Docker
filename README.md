@@ -13,7 +13,7 @@ https://dev.to/pwd9000/introduction-to-github-codespaces-building-your-first-dev
 ## Executar el primer Dockerfile
 
    ### Configurar el docker file (escriure això al fitxer Docker file)
-   \# Utilitza l'imatge oficial de nginx (servidor web) en la seva versión Alpine (més lleugera)
+   \# Utilitza l'imatge oficial de nginx (servidor web) en la seva versió Alpine (més lleugera)
    FROM nginx:alpine
    \# Crea un arxiu index.html amb el contingut "Hola Mon"
    RUN echo "<h1>Hola Mon</h1>" > /usr/share/nginx/html/index.html
