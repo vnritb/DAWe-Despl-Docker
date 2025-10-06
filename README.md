@@ -3,9 +3,6 @@
 Introducció a Docker
 https://dev.to/pwd9000/introduction-to-github-codespaces-building-your-first-dev-container-69l
 
-## Enlace para generar un clon del repo
-https://github.com/ASIXGuine/m8/generate
-
 ## Pas a pas amb docker
 
 ## Instal·lar Docker a Ubuntu
