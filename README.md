@@ -8,7 +8,7 @@ https://dev.to/pwd9000/introduction-to-github-codespaces-building-your-first-dev
 ## Instal·lar Docker a Ubuntu
 
 ## Executar el primer docker
-   docker run -d --name apache-container -p 8181:80 httpd:latest
+   `docker run -d --name apache-container -p 8181:80 httpd:latest`
 
 ## Executar el primer Dockerfile
 
@@ -38,7 +38,7 @@ https://dev.to/pwd9000/introduction-to-github-codespaces-building-your-first-dev
 
    ### Fer algunes modificacions al docker file
    Imaginar que per qualsevol moiut, necessitem que el servidor web serveixi per un port diferent al 80
-   [...] //Tema dekl SED 
+   [...] //Tema del SED 
 
 ## Reorganitzar el repositori
    - Arribat a aqquest punt, podem reorganizar el repositorio per a separar el que acabem de fer, del que vindrà
