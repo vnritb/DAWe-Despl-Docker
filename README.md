@@ -42,42 +42,32 @@ https://github.com/ASIXGuine/m8/generate
    [...] //Tema dekl SED 
 
 ## Reorganitzar el repositori
-   - Llegdo a este punto, podemos reorganizar el repositorio para separar lo que acabamos de hacer de lo siguiente
-   - Crear una carpeta helloworld, y moverlo tood ahí
-   - Crear una carpeta videostreamer
-   - Matar todos los dockers, colocarse en la carpeta helloworld, y comprobar que seguimos podiendo crear la imagen y desplegar el Docker
-   - comandos: docker images, docker container, docker container ls, o list, con --all
+   - Arribat a aqquest punt, podem reorganizar el repositorio per a separar el que acabem de fer, del que vindrà
+   - Crear una carpeta helloworld, y moure-ho tot allí
+   - Matar tots els dockers, col·locar-se a la carpeta helloworld, y comprovar que encara podem crear l'imatge i desplegar el Docker
+   - comandes: docker images, docker container, docker container ls, o list, con --all
 
-## Configurar un contenedor persistente
-   Los cambios que hagan en el conenedor sólo se mantienen en el mismo contenedor, y se mantienen después de hacer un kill, o un stop y al reiniciar el contenedor con el comando start, pero es frecuente que a lo largo del ciclo de vida de  un conenedor sea necesario reconstruirlo a partir de actualizaciones de la imagen original.  Para esto es necesario asociar los directiorios que se deseen conservar con una imagen o volumen en el host.  De esta manera, diferentes contenedores generados a partir de la misma imagen, pueden persistir su información
+## Configurar un contenidor persistent
+Els canvis que es fan al contenidor, només es mantenen dins del mateix contenidor, i es mantene després de fer un kill, o un stop, i en reiniciar el contenidor amb la comanda start, però és frequent que durant el cicle de vida d'un contenidor, sigui necessari reconstruir-lo a partir d'actualitzacions de l'imatge original.  Per a fer això, és necessari asociar els directoris que es vulguin conservar amb una imatge o volumen al host.  D'aquesta manera, diferents contenidors generats a partir de la mateixa imatge, poden persistir la seva informació.  
 
-   ### Diferencia entre volumes y bind mount
-   Volumes los gestiona Docker.  No hay acceso a los archivos del volumen porque estamos en un docker-indocker, y no tenemos usuario con permisos para acceder a los archivos de los volúmenes
-   
-   Los bind mount son monstajes de directorios más parecidos a los que se hacen en el sistema operativo.
-   ### Opción 1: enlazar un volumen al vuelo ()
-
-      - probar a lanzar un contenedor sin volumen, crear un archivo en la carpeta /usr/share/nginx/html del contenedor,y comprobar que funciona accediendo a ese archivo a través del servidor web. Matar el contendor y prunarlo.  Crear un nuevo conenedor y montarlo don el mismo volumen.  Hacer la misma comprobación (ojo con la caché del navegador).  Cuál es el. resultado?
-      - Hacer lo mismo con un contenedor con un volumen montado.  Ver más abajo
-      - Comandos: docker volume ls, docker volume inspect [nombre o id del volumen], docker exec -it [nombre/id] sh (o verlo en el plugin de docker)
-      - Ejecutar con volumen: docker run -d --name helloworld-container -p 8383:80 -v hwc:/usr/share/nginx/html helloworld:latest
-   ### Opción 2: montar un directorio al vuelo
+### Diferència entre volumes y bind mount
+   Els volums es gestionen amb Docker.
+   Los bind mount són muntatges de directoris mé semblants als que fa el sistema operatiu
+   ### Opció 1: enllazar un volum "al vuelo"
+      - provar de llençar un contenidor sense volumen, crear un arxiu a la carpeta /usr/share/nginx/html del contenidor,i comprovar que funciona accedint a aquest arxiu mitjançabnt el servidor web. Matar el contenidor y "prunar-lo".  Crear un nou contenidor i monat-lo amb el mateix volumen.  Fer la mateixa comprovació (compte amb la caché del navegador).  Quín és el resultat?
+      - Fer el mateix amb un contenidor amb un colum muntat (veure més avall)
+      - Comandes: docker volume ls, docker volume inspect [nombre o id del volumen], docker exec -it [nombre/id] sh (o verlo en el plugin de docker)
+      - Executar amb volum: docker run -d --name helloworld-container -p 8383:80 -v hwc:/usr/share/nginx/html helloworld:latest
+   ### Opción 2: montar un directori "al vuelo"
 
    ## Docker compose
-      Como se puede ver, la instanciación de contenedores mediante la línea de comandos se empieza a complicar según los comandos que utilicemos, y a medida que queremos añadirle más caracteríaticas a la imagen.
+      Com es pot veure, l'instalació de contenidors fent servir només el prompt de la consola, comença a complicar segons les comandes que fem servir, i a mida que volem afegir més característiques a l'imatge.
 
-   ### Juntarlo todo en un único docker compose.
-      
-      Ahora montaremos un contenedor con las mismas características que el contenedor con el que hemos estado probando, pero lo haremos configurando un archivo docker-compose.yml
+   ### Posar ho tot junt a un sol docker compose
+      Ara  muntarem un contenidor amb les mateixes característiques que el contenidor amb el que hem estat provatn, però ho farem configurant un arxiu docker-compose.ymlmontaremos un contenedor con las mismas características que el contenedor con el que hemos estado probando, pero lo haremos configurando un archivo docker-compose.yml
 
-   ### Añadir un segundo container al mismo archivo de docker compose
-   ### Extra: utilizar el plugin de Visual Studio code para manejar los contenedores
-
-## Configurar un docker con un servidor de streaming de video
-   ### Crear el dockerfile
-
-
-
+   ### Afegir un segon container al mateix arxiu doker compose
+   ### Extra: Mirar el cplugin de Visual studio code per a treballar amb contenidors docker
 
 
 
