@@ -67,7 +67,6 @@ Com es pot veure, l'instalació de contenidors fent servir només el prompt de l
 Ara  muntarem un contenidor amb les mateixes característiques que el contenidor amb el que hem estat provatn, però ho farem configurant un arxiu docker-compose.ymlmontaremos un contenedor con las mismas características que el contenedor con el que hemos estado probando, pero lo haremos configurando un archivo docker-compose.yml
 
 ### Afegir un segon container al mateix arxiu doker compose
+Configuar un servidor amb servidor d'aplicacions, i servidor de base de dades
+
 ### Extra: Mirar el cplugin de Visual studio code per a treballar amb contenidors docker
-
-
-
