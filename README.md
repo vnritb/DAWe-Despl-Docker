@@ -4,6 +4,7 @@ https://dev.to/pwd9000/introduction-to-github-codespaces-building-your-first-dev
 
 ## 🌟 Instal·lar Docker a Ubuntu
 Descarregar de:  https://docs.docker.com/desktop/setup/install/linux/
+
 La màquina virtual requereix virtualització de hardware VT-x/AMD-V
 
 ## 🌟 Executar el primer docker
