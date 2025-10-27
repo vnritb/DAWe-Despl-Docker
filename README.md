@@ -10,7 +10,7 @@ O fer:
 ```
 refresh
 snap install docker
-``
+```
 
 La màquina virtual requereix virtualització de hardware VT-x/AMD-V
 
