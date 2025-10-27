@@ -2,7 +2,7 @@
 ## 🌟 Introducció a Docker
 https://dev.to/pwd9000/introduction-to-github-codespaces-building-your-first-dev-container-69l
 
-## 🌟 Instal·lar Docker a Ubuntu
+### 🔹 Instal·lar Docker a Ubuntu
 Veure instruccions a:  https://docs.docker.com/desktop/setup/install/linux/
 
 O fer:
@@ -14,12 +14,60 @@ snap install docker
 
 La màquina virtual requereix virtualització de hardware VT-x/AMD-V
 
-## 🌟 Executar el primer docker
+### 🔹 Executar el primer docker
 `docker run -d --name apache-container -p 8181:80 httpd:latest`
 
-## 🌟 Docker hub
+### 🔹 Docker hub
+https://hub.docker.com/
+https://hub.docker.com/_/httpd
+https://hub.docker.com/_/wordpress
 
-## 🌟 Executar un altre docker
+### 🔹 Executar un altre docker
+`docker run -d --name apache-container -p 8181:80 httpd:latest`
+`docker run -d --name some-wordpress -p 8081:80 wordpress`
+
+Per què falla?
+
+## 🌟 Comandes docker
+
+### 🔹 Gestió de contenidors
+|Comanda de Docker                                             |Descripció                                                                  |
+|--------------------------------------------------------------|----------------------------------------------------------------------------|
+|docker run -d -p <host_port>:<cont_port> --name <nom> <imatge>|Crea i inicia un nou contenidor en segon pla (-d) amb mapatge de ports (-p).|
+|docker ps -a                                                  |Llista tots els contenidors (en execució i aturats).                        |
+|docker stop <contenidor>                                      |Atura un contenidor en execució.                                            |
+|docker exec -it <contenidor> bash                             |Executa una shell interactiva dins d'un contenidor.                         |
+|docker rm <contenidor>                                        |Elimina un contenidor aturat.                                               |
+
+El port assignat a un contenidor queda fixat.  Per canviar el por, s0ha d'eliminar el continidor i tornar a crear un de nou amb un nou bindig dels ports
+
+### 🔹 Gestió d'imatges
+|Comanda de Docker                                             |Descripció                                                                  |
+|--------------------------------------------------------------|----------------------------------------------------------------------------|
+|docker pull <imatge>                                          |Descarrega una imatge d'un registre (Docker Hub per defecte).               |
+|docker images                                                 |Llista les imatges locals.                                                  |
+|docker build -t <nom> .                                       |Construeix una imatge a partir d'un Dockerfile.                             |
+|docker rmi <imatge>                                           |Elimina una imatge local.                                                   |
+
+
+### 🔹 Gestió de xarxes
+|Comanda de Docker                                             |Descripció                                                                  |
+|--------------------------------------------------------------|----------------------------------------------------------------------------|
+|docker network create --driver bridge <nom_xarxa>             |Crea una nova xarxa bridge definida per l'usuari.                           |
+|docker network ls                                             |Llista totes les xarxes.                                                    |
+|docker run --network <nom_xarxa> <imatge>                     |Crea un contenidor connectant-lo a la xarxa especificada.                   |
+|docker network connect <xarxa> <contenidor>                   |Connecta un contenidor existent a una xarxa.                                |
+|docker network disconnect <xarxa> <contenidor>                |Desconnecta un contenidor d'una xarxa.                                      |
+|docker network rm <xarxa>                                     |Elimina una xarxa.                                                          |
+
+### 🔹 Gestió de volums
+|Comanda de Docker                                             |Descripció                                                                  |
+|--------------------------------------------------------------|----------------------------------------------------------------------------|
+|docker volume create <nom_volum>                              |Crea un nou volum anomenat.                                                 |
+|docker volume ls                                              |Llista tots els volums locals.                                              |
+|docker run -v <nom_volum>:<ruta_cont> <imatge>                |Crea un contenidor muntant el volum especificat a una ruta del contenidor.  |
+|docker volume rm <volum>                                      |Elimina un volum.                                                           |
+|docker volume prune                                           |Elimina tots els volums no utilitzats (no associats a cap contenidor).      |
 
 ## 🌟 Docker file
 
