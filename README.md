@@ -8,7 +8,7 @@ Veure instruccions a:  https://docs.docker.com/desktop/setup/install/linux/
 O fer:
 
 ```
-refresh
+anap refresh
 snap install docker
 ```
 
