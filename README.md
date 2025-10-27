@@ -3,14 +3,27 @@
 https://dev.to/pwd9000/introduction-to-github-codespaces-building-your-first-dev-container-69l
 
 ## 🌟 Instal·lar Docker a Ubuntu
-Descarregar de:  https://docs.docker.com/desktop/setup/install/linux/
+Veure instruccions a:  https://docs.docker.com/desktop/setup/install/linux/
+
+O fer:
+
+```
+refresh
+snap install docker
+``
 
 La màquina virtual requereix virtualització de hardware VT-x/AMD-V
 
 ## 🌟 Executar el primer docker
 `docker run -d --name apache-container -p 8181:80 httpd:latest`
 
-## 🌟 Executar el primer **Dockerfile**
+## 🌟 Docker hub
+
+## 🌟 Executar un altre docker
+
+## 🌟 Docker file
+
+### 🔹 Executar el primer **Dockerfile**
 
 ### 🔹 Configurar el docker file (escriure això al fitxer Docker file)
 
