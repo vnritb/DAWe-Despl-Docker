@@ -23,8 +23,6 @@ https://hub.docker.com/_/httpd
 https://hub.docker.com/_/wordpress
 
 ### 🔹 Executar un altre docker
-`docker run -d --name apache-container -p 8181:80 httpd:latest`
-
 `docker run -d --name some-wordpress -p 8081:80 wordpress`
 
 Per què falla?
