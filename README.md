@@ -68,6 +68,20 @@ El port assignat a un contenidor queda fixat.  Per canviar el port, s'ha d'elimi
 |docker volume rm <volum>                                      |Elimina un volum.                                                           |
 |docker volume prune                                           |Elimina tots els volums no utilitzats (no associats a cap contenidor).      |
 
+## 🌟 Configurar un contenidor persistent
+Els canvis que es fan al contenidor, només es mantenen dins del mateix contenidor, i es mantene després de fer un kill, o un stop, i en reiniciar el contenidor amb la comanda start, però és freque[...]
+
+### 🔹 Diferència entre volumes y bind mount
+Els volums es gestionen amb Docker.
+Los bind mount són muntatges de directoris mé semblants als que fa el sistema operatiu
+
+### 🔹 Opció 1: enllazar un volum "al vuelo"
+   - provar de llençar un contenidor sense volumen, crear un arxiu a la carpeta /usr/share/nginx/html del contenidor,i comprovar que funciona accedint a aquest arxiu mitjançabnt el servidor web. Mat[...]
+   - Fer el mateix amb un contenidor amb un colum muntat (veure més avall)
+   - Comandes: docker volume ls, docker volume inspect [nombre o id del volumen], docker exec -it [nombre/id] sh (o verlo en el plugin de docker)
+   - Executar amb volum: docker run -d --name helloworld-container -p 8383:80 -v hwc:/usr/share/nginx/html helloworld:latest
+### 🔹 Opció 2: montar un directori "al vuelo"
+
 ## 🌟 Docker file
 
 ### 🔹 Executar el primer **Dockerfile**
@@ -108,20 +122,6 @@ Imaginar que per qualsevol moiut, necessitem que el servidor web serveixi per un
    - Crear una carpeta helloworld, y moure-ho tot allí
    - Matar tots els dockers, col·locar-se a la carpeta helloworld, y comprovar que encara podem crear l'imatge i desplegar el Docker
    - comandes: docker images, docker container, docker container ls, o list, con --all
-
-## 🌟 Configurar un contenidor persistent
-Els canvis que es fan al contenidor, només es mantenen dins del mateix contenidor, i es mantene després de fer un kill, o un stop, i en reiniciar el contenidor amb la comanda start, però és freque[...]
-
-### 🔹 Diferència entre volumes y bind mount
-Els volums es gestionen amb Docker.
-Los bind mount són muntatges de directoris mé semblants als que fa el sistema operatiu
-
-### 🔹 Opció 1: enllazar un volum "al vuelo"
-   - provar de llençar un contenidor sense volumen, crear un arxiu a la carpeta /usr/share/nginx/html del contenidor,i comprovar que funciona accedint a aquest arxiu mitjançabnt el servidor web. Mat[...]
-   - Fer el mateix amb un contenidor amb un colum muntat (veure més avall)
-   - Comandes: docker volume ls, docker volume inspect [nombre o id del volumen], docker exec -it [nombre/id] sh (o verlo en el plugin de docker)
-   - Executar amb volum: docker run -d --name helloworld-container -p 8383:80 -v hwc:/usr/share/nginx/html helloworld:latest
-### 🔹 Opció 2: montar un directori "al vuelo"
 
 ## 🌟 **Docker compose**
 Com es pot veure, l'instalació de contenidors fent servir només el prompt de la consola, comença a complicar segons les comandes que fem servir, i a mida que volem afegir més característiques a l[...]
