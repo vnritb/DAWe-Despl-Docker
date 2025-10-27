@@ -84,6 +84,8 @@ Los bind mount són muntatges de directoris mé semblants als que fa el sistema 
 
 ## 🌟 Docker file
 
+Com es pot veure, l'instalació de contenidors fent servir només el prompt de la consola, comença a complicar segons les comandes que fem servir, i a mida que volem afegir més característiques a l'imatge la línia de codi que s'ha descriure és més críptica
+
 ### 🔹 Executar el primer **Dockerfile**
 
 ### 🔹 Configurar el docker file (escriure això al fitxer Docker file)
@@ -124,10 +126,9 @@ Imaginar que per qualsevol moiut, necessitem que el servidor web serveixi per un
    - comandes: docker images, docker container, docker container ls, o list, con --all
 
 ## 🌟 **Docker compose**
-Com es pot veure, l'instalació de contenidors fent servir només el prompt de la consola, comença a complicar segons les comandes que fem servir, i a mida que volem afegir més característiques a l[...]
 
 ### 🔹 Posar ho tot junt a un sol docker compose
-Ara  muntarem un contenidor amb les mateixes característiques que el contenidor amb el que hem estat provatn, però ho farem configurant un arxiu docker-compose.ymlmontaremos un contenedor con las mi[...]
+Ara  muntarem un contenidor amb les mateixes característiques que el contenidor amb el que hem estat provant, però ho farem configurant un arxiu docker-compose.yml
 
 ### 🔹 Afegir un segon container al mateix arxiu doker compose
 Configuar un servidor amb servidor d'aplicacions, i servidor de base de dades
