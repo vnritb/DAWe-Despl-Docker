@@ -38,7 +38,7 @@ Per què falla?
 |docker exec -it <contenidor> bash                             |Executa una shell interactiva dins d'un contenidor.                         |
 |docker rm <contenidor>                                        |Elimina un contenidor aturat.                                               |
 
-El port assignat a un contenidor queda fixat.  Per canviar el por, s0ha d'eliminar el continidor i tornar a crear un de nou amb un nou bindig dels ports
+El port assignat a un contenidor queda fixat.  Per canviar el port, s'ha d'eliminar el contenidor i tornar a crear un de nou amb un nou bindig dels ports
 
 ### 🔹 Gestió d'imatges
 |Comanda de Docker                                             |Descripció                                                                  |
